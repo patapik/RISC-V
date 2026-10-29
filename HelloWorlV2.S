@@ -6,7 +6,7 @@
 	.section	.rodata
 	.align	3
 .LC0:
-	.string	"Hello World"
+	.string	"Hello World\n"
 	.text
 	.align	1
 	.globl	main
@@ -23,7 +23,7 @@ main:
 	addi	s0,sp,16
 	.cfi_def_cfa 8, 0
 	lla	a0,.LC0
-	call	printf@plt
+	call	printf
 	li	a5,0
 	mv	a0,a5
 	ld	ra,8(sp)
